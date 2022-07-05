@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Contract</title>
+    <link rel="icon" href="" type="image/icon type">
+    <link rel ="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <h2>WEB APP CONTRACT TEST </h2>
+    <div class = "nav-bar">
+        <a class="active" href = "#home">Home</a>
+        <a href ="#news">News</a>
+        <a href ="#contact">Contact</a>
+        <a href ="#social">Social</a>
+        <a href ="#about">About</a>
+ </div>
+
+   <div class="wrapper">
+        <form action="#">
+            <input type = "file" hidden>
+            <img src = "" alt= "qr-code">
+            <div class ="content">
+                <i class = "fas fa-cloud-upload"></i>
+                <p>Upload QR code to Scan</p>
+            </div>
+        </form>
+
+        <div class="details">
+            <textarea disabled> This is a sample qr code operator </textarea>
+
+            <div class="buttons">
+                <button class="close">Close</button>
+                <button class="copy">Copy Text</button>
+            </div>
+        </div>
+   </div>
+
+   
+
+    <footer>
+        <h4>WEB APPLICATION SAMPLE</h4>
+        <a href ="mailto:web-dev-contract-sample@gmail.com"> WebAppContractSample@gmail.com </a>
+
+    </footer>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           min-height: 100vh;
+           background: white;
+        }
+
+        h2{
+            border: 5px solid #0B85FF;
+           background-color: #0B85FF;
+            border-radius: 14px;
+            position: relative;
+            top: -258px;
+            left: -20%;
+            box-shadow: rgba(0, 0, 0, .2);
+        }
+
+        .wrapper{
+            position: relative;
+            right: 190px;
+            width: 420px;
+            height: 270px;
+            border-radius: 7px;
+            background: #0B85FF;
+            padding: 30px 30px 35px;
+            transition: height 0.2s ease;
+        }
+
+        .wrapper.active{
+            height: 525px;
+        }
+
+        .wrapper form{
+            display: flex;
+            background: white;
+            cursor: pointer;
+            height: 210px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 7px;
+            transition: height 0.2s ease;
+        }
+
+        .wrapper.active form{
+            height: 225px;
+            pointer-events: none;
+        }
+
+
+        .wrapper .details{
+            opacity: 0;
+            pointer-events: none;
+            margin-top: 25px;
+        }
+
+        .wrapper.active .details{
+            opacity: 1;
+            pointer-events: auto;
+           transition: opacity 0.5s 0.05s ease;
+        }
+
+        .details textarea{
+            border-radius: 5px;
+            font-size: 18px;
+            color: white;
+            width: 100%;
+            height: 128px;
+            outline: none;
+            background: none;
+            padding: 10px 15px;
+            border: 1px solid #FFF ;
+        }
+
+        .details .button{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .buttons button{
+            margin-left: 6.5px;
+            outline: none;
+            border: none;
+            color: #0B85FF;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            height: 55px;
+            width: calc(100% / 2 - 10px);
+        }
+
+        .buttons button:hover{
+            background-color: green;
+            color: black;
+        }
+
+        form .content i{
+            color: #0B85FF;
+            font-size: 55px;
+        }
+
+        form .content p{
+            color: #0B85FF;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .wrapper.active form img{
+            display: block;
+        }
+
+        .wrapper.active form .content{
+            display: none; 
+        }
+        form img{
+            display: none;
+            max-width: 148px;
+        }
+
+        .nav-bar{
+            overflow: hidden;
+            background-color: white;
+            width: 32%;
+            position: absolute;
+            top: 43px;
+            right: 20px;
+            border-radius: 10px;
+        }
+
+        .nav-bar a{
+            float: left;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav-bar a:hover{
+            background-color: #0B85FF;
+            color: white;
+        }
+
+        footer{
+            position: absolute;
+            bottom: 0;
+            background-color: lightblue;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        footer h4{
+            position: relative;
+            bottom: -13px;
+        }
+
+        footer a{
+            position: relative;
+            bottom: -16px;
+        }
+        @media (max-width:768px){
+            body{width: 100%;
+            }
+        }
+
+        @media (max-width:800px){
+            body{
+               width: 100%;
+            }
+
+            h2{
+               text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+
+<script>
+    const wrapper  = document.querySelector(".wrapper"),
+    form = wrapper.querySelector("form"),
+    fileInp = form.querySelector("input"),
+    infoText = form.querySelector("p"),
+    closeButton = wrapper.querySelector(".close")
+    copyButton = wrapper.querySelector(".copy");
+
+    function fetchRequest(formData, file){
+        infoText.innerText = "Scanning QR Code...."
+        fetch("http://api.qrserver.com/v1/read-qr-code/", {
+            method: "POST", body: formData
+        }).then(res => res.json()).then(result =>{
+            result = result[0].symbol[0].data;
+            infoText.innerText = result ? "Upload QR Code To Scan...." : "Could not Scan QR Code";
+            if(!result) return;
+            wrapper.querySelector("textarea").innerText = result;
+            form.querySelector("img").src = URL.createObjectURL(file);
+            wrapper.classList.add("active");
+        }).catch(() => {
+            infoText.innerText = "Could not Scan QR Code";
+        })
+    };    
+
+    fileInp.addEventListener("change", e =>{
+        let file = e.target.files[0]; //This line of code fetches the user selected file
+        if (!file) return;
+        let formData = new FormData(); 
+        formData.append("file", file);
+        fetchRequest(formData, file);
+    });
+
+    copyButton.addEventListener("click", () => {
+        let text = wrapper.querySelector("textarea").textContent;
+        navigator.clipboard.writeText(text);
+    })
+
+    form.addEventListener("click",()=> fileInp.click());
+
+    closeButton.addEventListener("click",()=> wrapper.classList.remove("active"));
+
+
+</script>
+
+</body>
+</html>
